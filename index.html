@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script type="text/javascript" src="js/codigo.js"></script>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="author" content="Juan Magua, Sebastian Cobos, Lisbet Soria, Maria Tapia, Heady Silva" />
+	<meta name="description" content="Ciclos de repetición" />
+
+
+	<title>Ciclos en c++</title>
+
+
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">
+	<link rel="stylesheet" href="css/fontawesome-all.min.css">
+	<script type="text/javascript" src="js/actividad.js"></script>
+	<script type="text/javascript" src="js/script1.js"></script>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/content.css" />
+	<script type="text/javascript" src="css/codigo1.js"></script>
+	<script type="text/javascript" src="css/common.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/magnific-popup.css"/>
+	<link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+	<link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+	<link rel="stylesheet" href="css/tooplate-style.css">
+
+	<script>
+		var renderPage = true;
+
+	if(navigator.userAgent.indexOf('MSIE')!==-1
+		|| navigator.appVersion.indexOf('Trident/') > 0){
+			alert("Please view this in a modern browser such as Chrome or Microsoft Edge.");
+   		renderPage = false;
+	}
+	</script>
+</head>
+
+<body style=" padding: 0;
+    border:0;
+    margin: 0;">
+	<div id="loader-wrapper">
+		<div id="loader"></div>
+		<div class="loader-section section-left"></div>
+		<div class="loader-section section-right"></div>
+	</div>
+	
+	<div class="container-fluid tm-main">
+
+		<div class="row tm-main-row">
+
+			<div id="tmSideBar" class="col-xl-3 col-lg-4 col-md-12 col-sm-12 sidebar">
+
+				<button id="tmMainNavToggle" class="menu-icon">&#9776;</button>
+
+				<div class="inner">
+					<h2>Estructuras de Repetición en C++.</h2>
+					<div style="text-align: center;">
+						<p style="font-size: 13px">Avance del Aprendizaje</p>
+				    <progress class="progress" id="progress" min="0" max="100" value="10"
+				    ></progress>
+				    </div>
+					
+
+					<nav id="tmMainNav" class="tm-main-nav">
+						<ul>
+							<li>
+								<a href="#intro" id="tmNavLink1" class="scrolly active" data-bg-img="constructive_bg_01.jpg" data-page="#tm-section-1" onclick="desactivarBoton()" style="font-size: 15px; margin-bottom: 30px;">
+									<i class="fas fa-home tm-nav-fa-icon"></i>
+									<span>Inicio</span>
+								</a>
+							</li>
+
+							<li>
+								<a href="#products" id="tmNavLink11" class="scrolly" data-bg-img="constructive_bg_011.png" data-page="#tm-section-11" onclick="desactivarBoton2()" style="font-size: 15px;">
+									<i class="fas fa-map1 tm-nav-fa-icon"></i>
+									<span>Introducción</span>
+								</a>
+							</li>
+
+
+							<li>
+								<a href="#products" id="tmNavLink2" class="scrolly" data-bg-img="constructive_bg_02.jpg" data-page="#tm-section-2" data-page-type="carousel" onclick="activiarBoton()" style="font-size: 15px;">
+									<i class="fas fa-map tm-nav-fa-icon"></i>
+									<span>Contenido</span>
+								</a>
+							</li>
+								<ul class="other-section" id="todoContenido" id="tm-main-nav1">
+							      <li><a href="" class="" id="op1" data-page="#tm-section-6" onclick="cont1()" style="font-size: 15px;">Ciclo FOR en C++</a></li>
+							      <li><a href="" class="" id="op2" data-page="#tm-section-7" onclick="cont2()" style="font-size: 15px;">Ciclo WHILE en C++</a></li>
+							      <li><a href="" class="" id="op3" data-page="#tm-section-8" onclick="cont3()" style="font-size: 15px;">Ciclo DO-WHILE en C++</a></li>
+							    </ul>							
+							<li>
+								<a href="#company" class="scrolly" data-bg-img="constructive_bg_03.jpg" data-page="#tm-section-3" style="font-size: 15px;" onclick="desactivarBoton4()">
+									<i class="fas fa-users tm-nav-fa-icon"></i>
+									<span>Actividad</span>
+								</a>
+							</li>
+							<li>
+								<a href="#contact" class="scrolly" data-bg-img="constructive_bg_04.jpg" data-page="#tm-section-4" style="font-size: 15px;" onclick="desactivarBoton5()">
+									<i class="fas fa-comments tm-nav-fa-icon"></i>
+									<span>Autoevaluación</span>
+								</a>
+							</li>
+							<li>
+								<a href="#contact" class="scrolly" data-bg-img="constructive_bg_05.jpg" data-page="#tm-section-5" style="font-size: 15px;" onclick="desactivarBoton6()">
+									<i class="fas fa-comments1 tm-nav-fa-icon"></i>
+									<span>Bibliografia</span>
+								</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+
+			<div class="col-xl-9 col-lg-8 col-md-12 col-sm-12 tm-content">
+
+					<!-- seccion 1 -->
+					
+					<section id="tm-section-1" class="">
+						<div>
+							<header class="mb-4"><h2 class="tm-text-shadow"></h2></header>	
+							<div class="tm-bg-transparent-black tm-contact-box-pad">	
+							<div class="row tm-page-4-content">
+								<div class="">
+										<iframe frameborder="0" width="1200" height="675" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://view.genial.ly/61fea56ae940aa00121bb9de" type="text/html" allowscriptaccess="always" allowfullscreen="true" scrolling="yes" allownetworking="all"></iframe>
+									
+								</div>
+							</div>       
+							</dir>  
+								            		          
+						</div>       		          	
+					</section>
+
+
+					<!-- seccion  2 -->
+					
+					<section id="tm-section-2" class="tm-section tm-section-carousel">
+						<div>
+							<header class="mb-4"><h2 class="tm-text-shadow">Contenido</h2></header>	
+							<div class="tm-bg-transparent-black tm-contact-box-pad">	
+							<div class="row tm-page-4-content">
+								<div class="">
+									<div class="tm-address-box">
+										<p>Los ciclos o también conocidos como bucles, son una estructura de control esencial al momento de programar. Tanto C como C++ y la mayoría de los lenguajes utilizados actualmente, nos permiten hacer uso de estas estructuras. Un ciclo o bucle permite repetir una o varias instrucciones cuantas veces lo necesitemos, por ejemplo, si quisiéramos escribir los números del uno al cien no tendría sentido escribir cien líneas mostrando un numero en cada una, para esto y para muchísimas cosas más, es útil un ciclo, permitiéndonos hacer una misma tarea en una cantidad de líneas muy pequeña y de forma prácticamente automática.</p>
+										<br>
+										<p>
+											Existen diferentes tipos de ciclos o bucles, cada uno tiene una utilidad para casos específicos y depende de nuestra habilidad y conocimientos poder determinar en qué momento es bueno usar alguno de ellos. Tenemos entonces a nuestra disposición los siguientes tipos de ciclos en C++:
+										</p>
+										<br>
+										<div style="margin-left: 50px;">
+
+											<p>⚪️&nbsp &nbsp &nbsp <b>Ciclo for en C++</b></p>
+											<p>⚪️&nbsp &nbsp &nbsp <b>Ciclo while en C++</b></p>
+											<p>⚪️&nbsp &nbsp &nbsp <b>Ciclo do-while en C++</b></p>
+										</div>
+									</div>
+								</div>
+							</div>       
+							</dir>     
+							<br>
+							<div class="tm-img-container">
+								<div class="tm-img-slider">
+									<a href="img/gallery-img-01.jpg" class="tm-slider-img"><img src="img/gallery-img-01-tn.jpg" alt="Image" class="img-fluid" style="height: 320px; text-align:center;"></a>
+									<a href="img/gallery-img-02.jpg" class="tm-slider-img"><img src="img/gallery-img-02-tn.jpg" alt="Image" class="img-fluid" style="height: 320px; text-align:center;"></a>
+									<a href="img/gallery-img-03.jpg" class="tm-slider-img"><img src="img/gallery-img-03-tn.jpg" alt="Image" class="img-fluid" style="height: 320px;text-align:center; "></a>
+									<a href="img/gallery-img-04.jpg" class="tm-slider-img"><img src="img/gallery-img-04-tn.jpg" alt="Image" class="img-fluid" style="height: 320px; text-align:center;"></a>
+									<a href="img/gallery-img-05.jpg" class="tm-slider-img"><img src="img/gallery-img-05-tn.jpg" alt="Image" class="img-fluid" style="height: 320px; text-align:center;"></a>
+									<a href="img/gallery-img-06.jpg" class="tm-slider-img"><img src="img/gallery-img-06-tn.jpg" alt="Image" class="img-fluid" style="height: 320px; text-align:center;"></a>
+								</div>
+							</div>		            		          
+						</div>       		          	
+					</section>
+
+					
+
+
+					<!-- section 4 -->
+					<section id="tm-section-4" class="tm-section tm-section-carousel">
+						<div>
+							<header class="mb-4"><h2 class="tm-text-shadow">Autoevaluación</h2></header>	
+							<div class="tm-bg-transparent-black tm-contact-box-pad">	
+							<div class="row tm-page-4-content">
+								<div class="">
+									<div class="tm-address-box">
+										<iframe width="795" height="690" frameborder="0" src="https://es.educaplay.com/juego/11363597-autoevaluacion_bucles.html"></iframe>
+									</div>
+								</div>
+							</div>       
+							</dir>  
+								            		          
+						</div>       		          	
+					</section>
+
+
+
+					
+
+					<section id="tm-section-5" class="tm-section">						
+						<div class="row mb-4">
+							<header class="col-xl-12"><h2 class="tm-text-shadow">Bibliografia</h2></header>		
+						</div>
+						<div class="">
+							
+							<div class="">
+								<div class="media tm-bg-transparent-black tm-border-white">
+									<i class="fas fa-apple mr-4 tm-icon-circled tm-icon-media"></i>	
+									<div class="media-body">
+										<h3>Fuente 1</h3>
+										<p>Bucles o ciclos en C++ (2021). https://www.programarya.com/Cursos/C++/Ciclos</p>		
+									</div>
+								</div>
+							</div>
+							<br>
+							<div class="">
+								<div class="media tm-bg-transparent-black tm-border-white">
+									<i class="fas fa-map-pin mr-4 tm-icon-circled tm-icon-media"></i>	
+									<div class="media-body">
+										<h3>Fuente 2</h3>
+										<p>La programación estructurada y sus 3 instrucciones (2019). https://www.ilerna.es/blog/informatica-comunicacion/programacion-estructurada-intstrucciones/</p>	
+									</div>
+								</div>
+							</div>
+							<br>
+							<div class="">
+								<div class="media tm-bg-transparent-black tm-border-white">
+									<i class="fas fa-fly mr-4 tm-icon-circled tm-icon-media"></i>
+									<div class="media-body">
+										<h3>Fuente 3</h3>
+										<p>Mancilla Herrera, A. (2015). Diseño y construcción de algoritmos. Recuperado de: https://elibro.net/es/ereader/espoch/69931.</p>		
+									</div>
+								</div>
+							</div>
+							<br>
+							<div class="">
+								<div class="media tm-bg-transparent-black tm-border-white">
+									<i class="fas fa-linode mr-4 tm-icon-circled tm-icon-media"></i>
+									<div class="media-body">
+										<h3>Fuente 4</h3>
+										<p>Baase, S. (2002). Algoritmos computacionales: Introducción al análisis y diseño. México: Pearson Educación. 3ª. Ed</p>	
+									</div>
+								</div>
+							</div>			          		
+						</div>						               
+					</section>
+
+					<section id="tm-section-6" class="tm-section">
+						<div class="tm-bg-transparent-black tm-contact-box-pad">
+							<div class="row mb-4">
+								<div class="col-sm-12">
+									<header><h2 class="tm-text-shadow">FOR en C++</h2></header>
+								</div>
+							</div>
+							<div class="row tm-page-4-content">
+								<div class="">
+									<div class="tm-address-box">
+										<section id="main">
+
+										<article class="iDevice_wrapper" id="id61" >  <!--primero muestra el - y el otro minimiza-->
+										<div class="iDevice emphasis1" > <!-- este divides las secciones-->
+										<header class="iDevice_header iDevice_header_noIcon" style="text-align: center"><h1 class="iDeviceTitle" >&nbsp &nbsp &nbsp Concepto &nbsp &nbsp &nbsp</h1></header>
+										<div class="iDevice_inner">
+										<div class="iDevice_content_wrapper">
+										<div id="ta15_127_2" class="block iDevice_content">
+											<div class="leer">
+												<input class="impit" type="text" id="texto1" style="display:none" value="Los ciclos for son lo que se conoce como estructuras de control de flujo cíclicas o simplemente estructuras cíclicas, estos ciclos, como su nombre lo sugiere, nos permiten ejecutar una o varias líneas de código de forma iterativa, conociendo un valor especifico inicial y otro valor final, además nos permiten determinar el tamaño del paso entre cada giro o iteración del ciclo.
+												En resumen, un ciclo for es una estructura de control iterativa, que nos permite ejecutar de manera repetitiva un bloque de instrucciones, conociendo previamente un valor de inicio, un tamaño de paso y un valor final para el ciclo.">
+												<input class="boton" type="button" id="" value="Reproducir" onclick="rep1()">
+												<input class="boton" type="button" id="" value="Detener" onclick="det1()">
+												<input class="boton" type="button" id="" value="Pausa" onclick="pau1()">
+												<input class="boton" type="button" id="" value="Reanudar" onclick="pla1()">
+												
+											</div>
+
+										<div class="exe-text">
+											
+
+										<p style="color: black">Los ciclos for son lo que <b>se conoce como estructuras de control de flujo cíclicas o simplemente estructuras cíclicas</b>, estos ciclos, como su nombre lo sugiere, nos permiten ejecutar una o varias líneas de código de forma iterativa, <b>conociendo un valor especifico inicial y otro valor final</b>, además nos permiten determinar el tamaño del paso entre cada "giro" o iteración del ciclo.
+											<br>
+										En resumen, un ciclo for es una estructura de control iterativa, que nos permite ejecutar de manera repetitiva un bloque de instrucciones, conociendo previamente un valor de inicio, un tamaño de paso y un valor final para el ciclo.</p>
+										</div>
+										</div>
+										</div>
+										</div>
+										</div>
+										</article>
+
+
+										<article class="iDevice_wrapper textIdevice em_iDevice" id="id62">
+										<div class="iDevice emphasis1" >
+										<header class="iDevice_header iDevice_header_noIcon" style="text-align: center;"><h1 class="iDeviceTitle">&nbsp &nbsp &nbsp ¿Cómo funciona un Ciclo For? &nbsp &nbsp &nbsp</h1></header>
+										<div class="iDevice_inner">
+										<div class="iDevice_content_wrapper">
+										<div id="ta19_131_2" class="block iDevice_content">
+											<div class="leer">
+												<input class="impit" type="text" id="texto2" style="display:none" value="Para comprender mejor el funcionamiento del ciclo for, pongamos un ejemplo, supongamos que queremos mostrar los números pares entre el 50 y el 100, si imaginamos un poco como seria esto, podremos darnos cuenta que nuestro ciclo deberá mostrar una serie de números como la siguiente: 50 52 54 56 58 60 hasta el 96 98 100. Como podemos verificar, tenemos entonces los componentes necesarios para nuestro ciclo for, tenemos un valor inicial que sería el 50, tenemos también un valor final que sería el 100 y tenemos un tamaño de paso que es 2 los números pares. ">
+												<input class="boton" type="button" id="" value="Reproducir" onclick="rep2()">
+												<input class="boton" type="button" id="" value="Detener" onclick="det2()">
+												<input class="boton" type="button" id="" value="Pausa" onclick="pau2()">
+												<input class="boton" type="button" id="" value="Reanudar" onclick="pla2()">
+												
+											</div>
+
+										<div class="exe-text"><p style="color: black">
+											Para comprender mejor el funcionamiento del ciclo for, pongamos un ejemplo, supongamos que queremos mostrar los números pares entre el 50 y el 100, si imaginamos un poco como seria esto, podremos darnos cuenta que nuestro ciclo deberá mostrar una serie de números como la siguiente: 50 52 54 56 58 60 ... 96 98 100. Como podemos verificar, tenemos entonces los componentes necesarios para nuestro ciclo for, tenemos un <b>valor inicial</b> que sería el 50, tenemos también un <b>valor final</b> que sería el 100 y tenemos un <b>tamaño</b> de paso que es 2 (los números pares). 
+										</p>
+										</div>
+										</div>
+										</div>
+										</div>
+										</div>
+										</article>
+
+										<article class="iDevice_wrapper" id="id63" >  <!--primero muestra el - y el otro minimiza-->
+										<div class="iDevice emphasis1" > <!-- este divides las secciones-->
+										<header class="iDevice_header iDevice_header_noIcon" style="text-align: center"><h1 class="iDeviceTitle" >&nbsp &nbsp &nbsp Sintaxis del Ciclo For en C++ &nbsp &nbsp &nbsp</h1></header>
+										<div class="iDevice_inner">
+										<div class="iDevice_content_wrapper">
+										<div id="ta15_127_2" class="block iDevice_content">
+											<div class="leer">
+												<input class="impit" type="text" id="texto3" style="display:none" value="La sintaxis de un ciclo for es simple en C++, en realidad en la mayoría de los lenguajes de alto nivel es incluso muy similar, de hecho, con tan solo tener bien claros los 3 componentes del ciclo for los cuales son el inicio, final y tamaño de paso y con eso tenemos prácticamente todo hecho.">
+												<input class="boton" type="button" id="" value="Reproducir" onclick="rep3()">
+												<input class="boton" type="button" id="" value="Detener" onclick="det3()">
+												<input class="boton" type="button" id="" value="Pausa" onclick="pau3()">
+												<input class="boton" type="button" id="" value="Reanudar" onclick="pla3()">
+											</div>
+
+										<div class="exe-text"><p style="color: black">La sintaxis de un ciclo for es simple en C++, en realidad en la mayoría de los lenguajes de alto nivel es incluso muy similar, de hecho, con tan solo tener bien claros los 3 componentes del ciclo for <b>(inicio, final y tamaño de paso)</b> tenemos prácticamente todo hecho</p>
+										<p style="text-align: center; "><img src="img/for1.jpg"/></p>
+										</div>
+										</div>
+										</div>
+										</div>
+										</div>
+										</article>
+
+										<article class="iDevice_wrapper" id="id64" >  <!--primero muestra el - y el otro minimiza-->
+										<div class="iDevice emphasis1" > <!-- este divides las secciones-->
+										<header class="iDevice_header iDevice_header_noIcon" style="text-align: center"><h1 class="iDeviceTitle" >&nbsp &nbsp &nbsp Ejemplo de Ciclo For en C++ &nbsp &nbsp &nbsp</h1></header>
+										<div class="iDevice_inner">
+										<div class="iDevice_content_wrapper">
+										<div id="ta15_127_2" class="block iDevice_content">
+											<div class="leer">
+												<input class="impit" type="text" id="texto4" style="display:none" value="Sacar los números pares entre el numero 50 y el 100.
+												Para solucionar, tenemos que el valor inicial para nuestro ciclo es el numero 50 y el valor final es el 100, además, dado que necesitamos los números pares vamos a ir de dos en dos, así que el tamaño del paso va a ser 2, teniendo estos 3 componentes identificados">
+												<input class="boton" type="button" id="" value="Reproducir" onclick="rep4()">
+												<input class="boton" type="button" id="" value="Detener" onclick="det4()">
+												<input class="boton" type="button" id="" value="Pausa" onclick="pau4()">
+												<input class="boton" type="button" id="" value="Reanudar" onclick="pla4()">
+											</div>
+
+										<div class="exe-text">
+											<h5 style="text-align: center;color: black;">Sacar los números pares entre el numero 50 y el 100</h5>
+											<p style="color: black">Para solucionar, tenemos que el valor inicial para nuestro ciclo es el numero 50 y el valor final es el 100, además, dado que necesitamos los números pares vamos a ir de dos en dos, así que el tamaño del paso va a ser 2, teniendo estos 3 componentes identificados</p>
+										<p style="text-align: center; "><img src="img/for2.jpg"/></p>
+										</div>
+										</div>
+										</div>
+										</div>
+										</div>
+										</article>
+
+										</section>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>	
+
+					<section id="tm-section-7" class="tm-section">
+						<div class="tm-bg-transparent-black tm-contact-box-pad">
+							<div class="row mb-4">
+								<div class="col-sm-12">
+									<header><h2 class="tm-text-shadow">WHILE en C++</h2></header>
+								</div>
+							</div>
+							<div class="row tm-page-4-content">
+								<div class="">
+									<div class="tm-address-box">
+										<section id="main">
+
+										<article class="iDevice_wrapper" id="id71" >  <!--primero muestra el - y el otro minimiza-->
+										<div class="iDevice emphasis1" > <!-- este divides las secciones-->
+										<header class="iDevice_header iDevice_header_noIcon" style="text-align: center"><h1 class="iDeviceTitle" >&nbsp &nbsp &nbsp Concepto &nbsp &nbsp &nbsp</h1></header>
+										<div class="iDevice_inner">
+										<div class="iDevice_content_wrapper">
+										<div id="ta15_127_2" class="block iDevice_content">
+											<div class="leer">
+												<input class="impit" type="text" id="texto5" style="display:none" value="Los ciclos while son también una estructura cíclica, que nos permite ejecutar una o varias líneas de código de manera repetitiva sin necesidad de tener un valor inicial e incluso a veces sin siquiera conocer cuando se va a dar el valor final que esperamos, los ciclos while, no dependen directamente de valores numéricos, sino de valores booleanos, es decir su ejecución depende del valor de verdad de una condición dada, verdadera o falso, nada más. De este modo los ciclos while, son mucho más efectivos para condiciones indeterminadas, que no conocemos cuando se van a dar a diferencia de los ciclos for, con los cuales se debe tener claro un principio, un final y un tamaño de paso.">
+												<input class="boton" type="button" id="" value="Reproducir" onclick="rep5()">
+												<input class="boton" type="button" id="" value="Detener" onclick="det5()">
+												<input class="boton" type="button" id="" value="Pausa" onclick="pau5()">
+												<input class="boton" type="button" id="" value="Reanudar" onclick="pla5()">
+												
+											</div>
+											
+
+										<div class="exe-text"><p style="color: black">Los ciclos while son también una <b>estructura cíclica</b>, que nos permite ejecutar una o varias líneas de código de manera repetitiva sin necesidad de tener un valor inicial e incluso a veces sin siquiera conocer cuando se va a dar el valor final que esperamos, los ciclos while, <b>no dependen directamente de valores numéricos, sino de valores booleanos</b>, es decir su ejecución depende del valor de verdad de una condición dada, verdadera o falso, nada más. De este modo los ciclos while, son mucho más efectivos para condiciones indeterminadas, que no conocemos cuando se van a dar a diferencia de los ciclos for, con los cuales se debe tener claro un principio, un final y un tamaño de paso.</p>
+										</div>
+										</div>
+										</div>
+										</div>
+										</div>
+										</article>
+
+
+										<article class="iDevice_wrapper textIdevice em_iDevice" id="id72">
+										<div class="iDevice emphasis1" >
+										<header class="iDevice_header iDevice_header_noIcon" style="text-align: center;"><h1 class="iDeviceTitle">&nbsp &nbsp &nbsp ¿Cómo funciona un Ciclo While? &nbsp &nbsp &nbsp</h1></header>
+										<div class="iDevice_inner">
+										<div class="iDevice_content_wrapper">
+										<div id="ta19_131_2" class="block iDevice_content">
+											<div class="leer">
+												<input class="impit" type="text" id="texto6" style="display:none" value="Para comprender mejor el funcionamiento del ciclo while, pongamos un buen ejemplo, imaginemos que por algún motivo, queremos pedirle a un usuario una serie de números cualquiera y que solo dejaremos de hacerlo cuando el usuario ingrese un número mayor a 100. Como vemos, aquí no podríamos utilizar un ciclo for, pues no tenemos ni idea de cuándo al usuario se le va a ocurrir ingresar un número mayor que 100, es algo indeterminado para nosotros, sin embargo el ciclo while nos permite ejecutar una acción de forma infinita hasta que se cumpla alguna condición especifica, en nuestro caso sería que el numero ingresado sea mayor a 100. De modo que si el usuario nos ingresa de manera sucesiva los siguientes numero 1,50,99, 49, 21, 30, 100 entre otros, nuestro programa no finalizara, pues ninguno de estos números es mayor que 100, sin embargo si nos ingresara el numero 300, el programa finalizaría inmediatamente.">
+												<input class="boton" type="button" id="" value="Reproducir" onclick="rep6()">
+												<input class="boton" type="button" id="" value="Detener" onclick="det6()">
+												<input class="boton" type="button" id="" value="Pausa" onclick="pau6()">
+												<input class="boton" type="button" id="" value="Reanudar" onclick="pla6()">
+												
+											</div>
+										<div class="exe-text"><p p style="color: black;">Para comprender mejor el funcionamiento del ciclo while, pongamos un buen ejemplo, imaginemos que por algún motivo, queremos pedirle a un usuario una serie de números cualquiera y que solo dejaremos de hacerlo cuando el usuario ingrese un número mayor a 100. Como vemos, aquí no podríamos utilizar un ciclo for, pues no tenemos ni idea de cuándo al usuario se le va a ocurrir ingresar un número mayor que 100, es algo indeterminado para nosotros, sin embargo <b>el ciclo while nos permite ejecutar una acción de forma infinita hasta que se cumpla alguna condición especifica</b>, en nuestro caso sería que el numero ingresado sea mayor a 100. De modo que si el usuario nos ingresa de manera sucesiva los siguientes numero 1,50,99, 49, 21, 30, 100 ..., nuestro programa no finalizara, pues ninguno de estos números es mayor que 100, sin embargo si nos ingresara el numero 300, el programa finalizaría inmediatamente.</p>
+										</div>
+										</div>
+										</div>
+										</div>
+										</div>
+										</article>
+
+
+										<article class="iDevice_wrapper" id="id73" >  <!--primero muestra el - y el otro minimiza-->
+										<div class="iDevice emphasis1" > <!-- este divides las secciones-->
+										<header class="iDevice_header iDevice_header_noIcon" style="text-align: center"><h1 class="iDeviceTitle" >&nbsp &nbsp &nbsp Sintaxis del Ciclo While en C++ &nbsp &nbsp &nbsp</h1></header>
+										<div class="iDevice_inner">
+										<div class="iDevice_content_wrapper">
+										<div id="ta15_127_2" class="block iDevice_content">
+											<div class="leer">
+												<input class="impit" type="text" id="texto7" style="display:none" value="La sintaxis de un ciclo while es incluso más simple y legible que la del ciclo for en C++, pues simplemente requerimos tener clara una condición de parada. En realidad, en la mayoría de los lenguajes de alto nivel la manera de escribir un ciclo while (la sintaxis) es incluso muy similar, así que con tan solo tener bien clara una condición de finalización para el ciclo tendremos prácticamente todo hecho.">
+												<input class="boton" type="button" id="" value="Reproducir" onclick="rep7()">
+												<input class="boton" type="button" id="" value="Detener" onclick="det7()">
+												<input class="boton" type="button" id="" value="Pausa" onclick="pau7()">
+												<input class="boton" type="button" id="" value="Reanudar" onclick="pla7()">
+												
+											</div>
+
+										<div class="exe-text"><p style="color: black">La sintaxis de un ciclo while es incluso más simple y "legible" que la del ciclo for en C++, pues simplemente <b>requerimos tener clara una condición de parada</b>. En realidad, en la mayoría de los lenguajes de alto nivel la manera de escribir un ciclo while (la sintaxis) es incluso muy similar, así que con tan solo tener bien clara una condición de finalización para el ciclo tendremos prácticamente todo hecho.</p>
+										<p style="text-align: center; "><img src="img/while1.jpg"/></p>
+										</div>
+										</div>
+										</div>
+										</div>
+										</div>
+										</article>
+
+										<article class="iDevice_wrapper" id="id74" >  <!--primero muestra el - y el otro minimiza-->
+										<div class="iDevice emphasis1" > <!-- este divides las secciones-->
+										<header class="iDevice_header iDevice_header_noIcon" style="text-align: center"><h1 class="iDeviceTitle" >&nbsp &nbsp &nbsp Ejemplo de Ciclo While en C++ &nbsp &nbsp &nbsp</h1></header>
+										<div class="iDevice_inner">
+										<div class="iDevice_content_wrapper">
+										<div id="ta15_127_2" class="block iDevice_content">
+											<div class="leer">
+												<input class="impit" type="text" id="texto8" style="display:none" value="Pedir números por pantalla hasta que alguno sea mayor a 100. 
+												Para solucionar esto, debemos tener clara cuál va a ser la condición que se debe cumplir para que el ciclo este pidiendo el numero contantemente, el ciclo se va a detener solo cuando el numero ingresado sea mayor que 100, así que la condición para que se siga ejecutando es que el numero sea menor a 100, ¿Comprender la lógica?, es simple si para que se detenga el numero debe ser mayor a 100, entonces para seguirse ejecutando el numero debe ser menor o igual a 100.">
+												<input class="boton" type="button" id="" value="Reproducir" onclick="rep8()">
+												<input class="boton" type="button" id="" value="Detener" onclick="det8()">
+												<input class="boton" type="button" id="" value="Pausa" onclick="pau8()">
+												<input class="boton" type="button" id="" value="Reanudar" onclick="pla8()">
+												
+											</div>
+										<div class="exe-text">
+											<h5 style="text-align: center;color: black;">Pedir números por pantalla hasta que alguno sea mayor a 100</h5>
+											<p style="color: black">Para solucionar esto, debemos tener clara cuál va a ser la condición que se debe cumplir para que el ciclo este pidiendo el numero contantemente, el ciclo se va a detener solo cuando el numero ingresado sea mayor que 100, así que la condición para que se siga ejecutando es que el numero sea menor a 100, ¿Comprender la lógica?, es simple si para que se detenga el numero debe ser mayor a 100, entonces para seguirse ejecutando el numero debe ser menor o igual a 100.</p>
+										<p style="text-align: center; "><img src="img/while2.jpg"/></p>
+										</div>
+										</div>
+										</div>
+										</div>
+										</div>
+										</article>
+
+										</section>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>	
+
+					<section id="tm-section-8" class="tm-section">
+						<div class="tm-bg-transparent-black tm-contact-box-pad">
+							<div class="row mb-4">
+								<div class="col-sm-12">
+									<header><h2 class="tm-text-shadow">DO-WHILE en C++</h2></header>
+								</div>
+							</div>
+							<div class="row tm-page-4-content">
+								<div class="">
+									<div class="tm-address-box">
+										<section id="main">
+
+										<article class="iDevice_wrapper" id="id81" >  <!--primero muestra el - y el otro minimiza-->
+										<div class="iDevice emphasis1" > <!-- este divides las secciones-->
+										<header class="iDevice_header iDevice_header_noIcon" style="text-align: center"><h1 class="iDeviceTitle" >&nbsp &nbsp &nbsp Concepto &nbsp &nbsp &nbsp</h1></header>
+										<div class="iDevice_inner">
+										<div class="iDevice_content_wrapper">
+										<div id="ta15_127_2" class="block iDevice_content">
+											<div class="leer">
+												<input class="impit" type="text" id="texto9" style="display:none" value="Los ciclos do while son una estructura de control cíclica, los cuales nos permiten ejecutar una o varias líneas de código de forma repetitiva sin necesidad de tener un valor inicial e incluso a veces sin siquiera conocer cuando se va a dar el valor final, hasta aquí son similares a los ciclos while, sin embargo el ciclo do-while nos permite añadir cierta ventaja adicional y esta consiste que nos da la posibilidad de ejecutar primero el bloque de instrucciones antes de evaluar la condición necesaria, de este modo los ciclos do-while, son más efectivos para algunas situaciones especificas. En resumen un ciclo do-while, es una estructura de control cíclica que permite ejecutar de manera repetitiva un bloque de instrucciones sin evaluar de forma inmediata una condición especifica, sino evaluándola justo después de ejecutar por primera vez el bloque de instrucciones">
+												<input class="boton" type="button" id="" value="Reproducir" onclick="rep9()">
+												<input class="boton" type="button" id="" value="Detener" onclick="det9()">
+												<input class="boton" type="button" id="" value="Pausa" onclick="pau9()">
+												<input class="boton" type="button" id="" value="Reanudar" onclick="pla9()">
+												
+											</div>
+
+
+										<div class="exe-text"><p style="color: black">Los ciclos do-while son una <b>estructura de control cíclica</b>, los cuales nos permiten ejecutar una o varias líneas de código de forma repetitiva sin necesidad de tener un valor inicial e incluso a veces sin siquiera conocer cuando se va a dar el valor final, hasta aquí son similares a los ciclos while, sin embargo el ciclo do-while nos permite añadir cierta ventaja adicional y esta consiste que nos da la posibilidad de <b>ejecutar primero el bloque de instrucciones antes de evaluar la condición necesaria</b>, de este modo los ciclos do-while, son más efectivos para algunas situaciones especificas. En resumen un ciclo do-while, es una estructura de control cíclica que permite ejecutar de manera repetitiva un bloque de instrucciones sin evaluar de forma inmediata una condición especifica, sino <b>evaluándola justo después de ejecutar por primera vez el bloque de instrucciones</b></p>
+										</div>
+										</div>
+										</div>
+										</div>
+										</div>
+										</article>
+
+
+										<article class="iDevice_wrapper textIdevice em_iDevice" id="id82">
+										<div class="iDevice emphasis1" >
+										<header class="iDevice_header iDevice_header_noIcon" style="text-align: center;"><h1 class="iDeviceTitle">&nbsp &nbsp &nbsp ¿Cómo funciona un Ciclo Do-While? &nbsp &nbsp &nbsp</h1></header>
+										<div class="iDevice_inner">
+										<div class="iDevice_content_wrapper">
+										<div id="ta19_131_2" class="block iDevice_content">
+											<div class="leer">
+												<input class="impit" type="text" id="texto10" style="display:none" value="Para comprender mejor el funcionamiento del ciclo while, usemos de nuevo el ejemplo de la sección anterior sobre el ciclo while. Imaginemos entonces que por algún motivo, queremos pedirle a un usuario una serie de números cualquiera y que solo dejaremos de hacerlo cuando el usuario ingrese un número mayor a 100. Como vimos anteriormente, esto se puede hacer por medio de un ciclo while, pero vamos ahora a ver como lo podemos hacer usando un ciclo do-while mejorando así un poco nuestro algoritmo, evitando ciertos comandos, tal como se dijo con el ciclo while, en efecto aquí estamos en la situación de no tener ni idea de cuándo al usuario se le va a ocurrir ingresar un número mayor que 100, pues es algo indeterminado para nosotros, sin embargo el ciclo while y en efecto el do-while nos permite ejecutar cierta acción de forma infinita hasta que se cumpla alguna condición especifica, en nuestro caso sería que el numero ingresado sea mayor a 100. De modo que si el usuario nos ingresa de manera sucesiva los siguientes numero 1,50,99, 49, 21, 30, 100, entre otros, nuestro programa no finalizara, pues ninguno de estos números es mayor que 100, sin embargo si nos ingresara el numero 300, el programa finalizaría inmediatamente.">
+												<input class="boton" type="button" id="" value="Reproducir" onclick="rep10()">
+												<input class="boton" type="button" id="" value="Detener" onclick="det10()">
+												<input class="boton" type="button" id="" value="Pausa" onclick="pau10()">
+												<input class="boton" type="button" id="" value="Reanudar" onclick="pla10()">
+												
+											</div>
+
+										<div class="exe-text"><p p style="color: black;">Para comprender mejor el funcionamiento del ciclo while, usemos de nuevo el ejemplo de la sección anterior sobre el ciclo while. Imaginemos entonces que por algún motivo, queremos pedirle a un usuario una serie de números cualquiera y que solo dejaremos de hacerlo cuando el usuario ingrese un número mayor a 100. Como vimos anteriormente, esto se puede hacer por medio de un ciclo while, pero vamos ahora a ver como lo podemos hacer usando un ciclo do-while mejorando así un poco nuestro algoritmo, evitando ciertos comandos, tal como se dijo con el ciclo while, en efecto aquí estamos en la situación de no tener ni idea de cuándo al usuario se le va a ocurrir ingresar un número mayor que 100, pues es algo indeterminado para nosotros, sin embargo el ciclo while y en efecto el do-while nos permite ejecutar cierta acción de forma infinita hasta que se cumpla alguna condición especifica, en nuestro caso sería que el numero ingresado sea mayor a 100. De modo que si el usuario nos ingresa de manera sucesiva los siguientes numero 1,50,99, 49, 21, 30, 100 ..., nuestro programa no finalizara, pues ninguno de estos números es mayor que 100, sin embargo si nos ingresara el numero 300, el programa finalizaría inmediatamente.</p>
+										</div>
+										</div>
+										</div>
+										</div>
+										</div>
+										</article>
+
+
+										<article class="iDevice_wrapper" id="id83" >  <!--primero muestra el - y el otro minimiza-->
+										<div class="iDevice emphasis1" > <!-- este divides las secciones-->
+										<header class="iDevice_header iDevice_header_noIcon" style="text-align: center"><h1 class="iDeviceTitle" >&nbsp &nbsp &nbsp Sintaxis del Ciclo Do-While en C++ &nbsp &nbsp &nbsp</h1></header>
+										<div class="iDevice_inner">
+										<div class="iDevice_content_wrapper">
+										<div id="ta15_127_2" class="block iDevice_content">
+											<div class="leer">
+											<input class="impit" type="text" id="texto11" style="display:none" value="La sintaxis de un ciclo do-while es un tanto más larga que la del ciclo while en C++, sin embargo no se hace más complicado, de hecho con tan solo tener bien clara una condición de finalización para el ciclo tendremos prácticamente todo terminado.">
+												<input class="boton" type="button" id="" value="Reproducir" onclick="rep11()">
+												<input class="boton" type="button" id="" value="Detener" onclick="det11()">
+												<input class="boton" type="button" id="" value="Pausa" onclick="pau11()">
+												<input class="boton" type="button" id="" value="Reanudar" onclick="pla11()">
+												
+											</div>
+										<div class="exe-text"><p style="color: black">La sintaxis de un ciclo do-while es un tanto más larga que la del ciclo while en C++, sin embargo no se hace más complicado, de hecho con tan solo tener bien clara una condición de finalización para el ciclo tendremos prácticamente todo terminado.</p>
+										<p style="text-align: center; "><img src="img/dowhile1.jpg"/></p>
+										</div>
+										</div>
+										</div>
+										</div>
+										</div>
+										</article>
+
+										<article class="iDevice_wrapper" id="id84" >  <!--primero muestra el - y el otro minimiza-->
+										<div class="iDevice emphasis1" > <!-- este divides las secciones-->
+										<header class="iDevice_header iDevice_header_noIcon" style="text-align: center"><h1 class="iDeviceTitle" >&nbsp &nbsp &nbsp Ejemplo de Ciclo Do-While en C++ &nbsp &nbsp &nbsp</h1></header>
+										<div class="iDevice_inner">
+										<div class="iDevice_content_wrapper">
+										<div id="ta15_127_2" class="block iDevice_content">
+											<div class="leer">
+											<input class="impit" type="text" id="texto12" style="display:none" value="Pedir números por pantalla hasta que alguno sea mayor a 100.
+											Para solucionar esto, debemos tener clara cuál va a ser la condición que se debe cumplir para que el ciclo este pidiendo el numero constantemente. El ciclo se va a detener solo cuando el numero ingresado sea mayor que 100, así que la condición para que se siga ejecutando es que el numero sea menor a 100, ¿Comprender la lógica?, es simple si para que se detenga el numero debe ser mayor a 100, entonces para seguirse ejecutando el numero debe ser menor o igual a 100.">
+												<input class="boton" type="button" id="" value="Reproducir" onclick="rep12()">
+												<input class="boton" type="button" id="" value="Detener" onclick="det12()">
+												<input class="boton" type="button" id="" value="Pausa" onclick="pau12()">
+												<input class="boton" type="button" id="" value="Reanudar" onclick="pla12()">
+												
+											</div>
+										<div class="exe-text">
+											<h5 style="text-align: center;color: black;">Pedir números por pantalla hasta que alguno sea mayor a 100</h5>
+											<p style="color: black">Para solucionar esto, debemos tener clara cuál va a ser la condición que se debe cumplir para que el ciclo este pidiendo el numero constantemente. El ciclo se va a detener solo cuando el numero ingresado sea mayor que 100, así que la condición para que se siga ejecutando es que el numero sea menor a 100, ¿Comprender la lógica?, es simple si para que se detenga el numero debe ser mayor a 100, entonces para seguirse ejecutando el numero debe ser menor o igual a 100.</p>
+										<p style="text-align: center; "><img src="img/dowhile2.jpg"/></p>
+										</div>
+										</div>
+										</div>
+										</div>
+										</div>
+										</article>
+
+										</section>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>	
+
+					<section id="tm-section-11" class="tm-section">
+						<div class="tm-bg-transparent-black tm-contact-box-pad">
+							<div class="row mb-4">
+								<div class="col-sm-12">
+									<header><h2 class="tm-text-shadow">Introducción</h2></header>
+								</div>
+							</div>
+							<div class="row tm-page-4-content">
+								<div class="">
+									<div class="tm-address-box">
+										<section id="main">
+
+										<article class="iDevice_wrapper" id="id111" >  <!--primero muestra el - y el otro minimiza-->
+										<div class="iDevice emphasis1" > <!-- este divides las secciones-->
+										<header class="iDevice_header iDevice_header_noIcon" style="text-align: center"><h1 class="iDeviceTitle" >&nbsp &nbsp &nbsp Motivación &nbsp &nbsp &nbsp</h1></header>
+										<div class="iDevice_inner">
+										<div class="iDevice_content_wrapper">
+										<div id="ta15_127_2" class="block iDevice_content">
+										<div class="exe-text"><p style="color: black">Las estructuras de repetición son las llamadas estructuras cíclicas, iterativas o de bucles. Permiten ejecutar un conjunto de instrucciones de manera repetida (o cíclica) mientras que la expresión lógica a evaluar se cumpla (sea verdadera). 
+											<br>
+										En lenguaje C++ existen tres estructuras de repetición: while, do-while y for. Las estructuras while y do-while son estructuras repetitivas de propósito general. La estructura de repetición for se utiliza, principalmente, para recorrer arreglos y, por tanto, se programará en la siguiente práctica.
+										</p>
+										</div>
+										</div>
+										</div>
+										</div>
+										</div>
+										</article>
+
+
+										<article class="iDevice_wrapper textIdevice em_iDevice" id="id112">
+										<div class="iDevice emphasis1" >
+										<header class="iDevice_header iDevice_header_noIcon" style="text-align: center;"><h1 class="iDeviceTitle">&nbsp &nbsp &nbsp Objetivos &nbsp &nbsp &nbsp</h1></header>
+										<div class="iDevice_inner">
+										<div class="iDevice_content_wrapper">
+										<div id="ta19_131_2" class="block iDevice_content">
+										<div class="exe-text">
+											<div style="margin-left: 50px;">
+
+											<p>⚪️&nbsp &nbsp &nbsp <b>Establecer el concepto de las estructuras FOR, WHILE y DO-WHILE.</b></p>
+											<p>⚪️&nbsp &nbsp &nbsp <b>Conocer cuando aplicar las estructuras FOR, WHILE y DO-WHILE.</b></p>
+											<p>⚪️&nbsp &nbsp &nbsp <b>Distinguiendo las estructuras FOR, WHILE y DO-WHILE en el lenguaje de programación C++.</b></p>
+										</div>
+										
+										</div>
+										</div>
+										</div>
+										</div>
+										</div>
+										</article>
+
+										</section>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>	
+
+					<section id="tm-section-3" class="tm-section">
+						<div class="tm-bg-transparent-black tm-contact-box-pad">
+							<div class="row mb-4">
+								<div class="col-sm-12">
+									<header><h2 class="tm-text-shadow">Actividades</h2></header>
+								</div>
+							</div>
+							<div class="row tm-page-4-content">
+								<div class="">
+									<div class="tm-address-box">
+										<section id="main">
+										<!--Seleccion multiple 1-->
+										<script type="text/javascript">document.body.className+=" js"</script>
+										<article class="iDevice_wrapper MultichoiceIdevice " id="id31">
+										<header class="iDevice_header iDevice_header_noIcon" style="text-align: center"><h1 class="iDeviceTitle" >&nbsp &nbsp &nbsp Pregunta de selección multiple 1&nbsp &nbsp &nbsp</h1></header>
+										<div class="iDevice_inner"> 
+										<form name="" action=""  class="">
+										<div class="">
+										<p style="color: black"><b>¿A que ciclo coresponde la seguiente estructura?</b></p>
+										<p style="text-align: center; "><img src="img/for2.jpg"/></p>
+										</div>
+
+										<section class="iDevice_answers">
+										<section class="iDevice_answer">
+										<p class="iDevice_answer-field js-required">
+											<input onclick="opcionMultiple1(1)" type="radio" name="option34_87"/>
+										</p>
+										<div class=""><div id="taans34_90" class="">
+										<p style="color: black">FOR</p>
+										</div>
+										</div>
+										</section>
+
+										<section class="iDevice_answers">
+										<section class="iDevice_answer">
+										<p class="iDevice_answer-field js-required">
+											<input onclick="opcionMultiple1(2)" type="radio" name="option34_87"/>
+										</p>
+										<div class=""><div id="taans34_90" class="">
+										<p style="color: black">WHILE</p>
+										</div>
+										</div>
+
+										<section class="iDevice_answers">
+										<section class="iDevice_answer">
+										<p class="iDevice_answer-field js-required">
+											<input onclick="opcionMultiple1(2)" type="radio" name="option34_87"/>
+										</p>
+										<div class=""><div id="taans34_90" class="">
+										<p style="color: black">DO-WHILE</p>
+										</div>
+										</div>
+
+										<p id="retroOM1"></p>
+										</section>
+										</section>
+										</article>
+										<br>
+
+										<!--Seleccion multiple 2-->
+										<script type="text/javascript">document.body.className+=" js"</script>
+										<article class="iDevice_wrapper MultichoiceIdevice " id="id32">
+										<header class="iDevice_header iDevice_header_noIcon" style="text-align: center"><h1 class="iDeviceTitle" >&nbsp &nbsp &nbsp Pregunta de selección multiple 2&nbsp &nbsp &nbsp</h1></header>
+										<div class="iDevice_inner"> 
+										<form name="" action=""  class="">
+										<div class="">
+										<p style="color: black"><b>¿A que ciclo coresponde la seguiente estructura?</b></p>
+										<p style="text-align: center; "><img src="img/while2.jpg"/></p>
+										</div>
+
+										<section class="iDevice_answers">
+										<section class="iDevice_answer">
+										<p class="iDevice_answer-field js-required">
+											<input onclick="opcionMultiple2(2)" type="radio" name="option34_87"/>
+										</p>
+										<div class=""><div id="taans34_90" class="">
+										<p style="color: black">FOR</p>
+										</div>
+										</div>
+										</section>
+
+										<section class="iDevice_answers">
+										<section class="iDevice_answer">
+										<p class="iDevice_answer-field js-required">
+											<input onclick="opcionMultiple2(1)" type="radio" name="option34_87"/>
+										</p>
+										<div class=""><div id="taans34_90" class="">
+										<p style="color: black">WHILE</p>
+										</div>
+										</div>
+
+										<section class="iDevice_answers">
+										<section class="iDevice_answer">
+										<p class="iDevice_answer-field js-required">
+											<input onclick="opcionMultiple2(2)" type="radio" name="option34_87"/>
+										</p>
+										<div class=""><div id="taans34_90" class="">
+										<p style="color: black">DO-WHILE</p>
+										</div>
+										</div>
+
+										<p id="retroOM2"></p>
+										</section>
+										</section>
+										</article>
+										<br>
+
+										<!--Seleccion multiple 3-->
+										<script type="text/javascript">document.body.className+=" js"</script>
+										<article class="iDevice_wrapper MultichoiceIdevice " id="id33">
+										<header class="iDevice_header iDevice_header_noIcon" style="text-align: center"><h1 class="iDeviceTitle" >&nbsp &nbsp &nbsp Pregunta de selección multiple 3&nbsp &nbsp &nbsp</h1></header>
+										<div class="iDevice_inner"> 
+										<form name="" action=""  class="">
+										<div class="">
+										<p style="color: black"><b>¿A que ciclo coresponde la seguiente estructura?</b></p>
+										<p style="text-align: center; "><img src="img/dowhile2.jpg"/></p>
+										</div>
+
+										<section class="iDevice_answers">
+										<section class="iDevice_answer">
+										<p class="iDevice_answer-field js-required">
+											<input onclick="opcionMultiple3(2)" type="radio" name="option34_87"/>
+										</p>
+										<div class=""><div id="taans34_90" class="">
+										<p style="color: black">FOR</p>
+										</div>
+										</div>
+										</section>
+
+										<section class="iDevice_answers">
+										<section class="iDevice_answer">
+										<p class="iDevice_answer-field js-required">
+											<input onclick="opcionMultiple3(2)" type="radio" name="option34_87"/>
+										</p>
+										<div class=""><div id="taans34_90" class="">
+										<p style="color: black">WHILE</p>
+										</div>
+										</div>
+
+										<section class="iDevice_answers">
+										<section class="iDevice_answer">
+										<p class="iDevice_answer-field js-required">
+											<input onclick="opcionMultiple3(1)" type="radio" name="option34_87"/>
+										</p>
+										<div class=""><div id="taans34_90" class="">
+										<p style="color: black">DO-WHILE</p>
+										</div>
+										</div>
+
+										<p id="retroOM3"></p>
+										</section>
+										</section>
+										</article>
+
+
+
+										<!--Verdadero Falso />-->
+										<article class="iDevice_wrapper TrueFalseIdevice em_iDevice " id="id35">
+										<div class="iDevice">
+										<header class="iDevice_header iDevice_header_noIcon" style="text-align: center"><h1 class="iDeviceTitle" >&nbsp &nbsp &nbsp Preguntas verdadero-falso &nbsp &nbsp &nbsp</h1></header>
+										<div class="iDevice_inner">
+										<div class="iDevice_content_wrapper">
+										<div id="ta35_101" class="block iDevice_content">
+										<p><b>Escoja verdadero o falso según corresponda.</b></p>
+										</div>
+										<br>
+										<section class="question">
+										<form name="true-false-form-0b35" action="#" class="activity-form">
+										<div id="taquestion0b35" class="block iDevice_content">
+										<p><b>El ciclo FOR se necesita saber el valor especifico inicial y el valor final</b></p>
+										</div>
+										<p class="iDevice_answer js-required">
+										<label for="true0b35"><input onclick="verdaderoFalso1(1)" type="radio" name="option0b35" id="true0b35" class="exe-radio-option exe-radio-option-0-2-0b35-truefalse" /> Verdadero</label> 
+										<label for="false0b35"><input onclick="verdaderoFalso1(2)"  type="radio" name="option0b35" id="false0b35" class="exe-radio-option exe-radio-option-1-2-0b35-truefalse" /> Falso</label>
+										</p>
+										</form>
+										<p id="retroVF1"></p>
+										</section>
+										<br>
+										<section class="question">
+										<form name="true-false-form-0b35" action="#" class="activity-form">
+										<div id="taquestion0b35" class="block iDevice_content">
+										<p><b>El ciclos while dependen directamente de valores numéricos</b></p>
+										</div>
+										<p class="iDevice_answer js-required">
+										<label for="true0b35"><input onclick="verdaderoFalso2(2)" type="radio" name="option0b35" id="true0b35" class="exe-radio-option exe-radio-option-0-2-0b35-truefalse" /> Verdadero</label> 
+										<label for="false0b35"><input onclick="verdaderoFalso2(1)"  type="radio" name="option0b35" id="false0b35" class="exe-radio-option exe-radio-option-1-2-0b35-truefalse" /> Falso</label>
+										</p>
+										</form>
+										<p id="retroVF2"></p>
+										</section>
+										<br>
+										<section class="question">
+										<form name="true-false-form-0b35" action="#" class="activity-form">
+										<div id="taquestion0b35" class="block iDevice_content">
+										<p><b>El ciclo DO-WHILE primero ejecuta el bloque de instrucciones antes de evaluar la condición necesaria</b></p>
+										</div>
+										<p class="iDevice_answer js-required">
+										<label for="true0b35"><input onclick="verdaderoFalso3(1)" type="radio" name="option0b35" id="true0b35" class="exe-radio-option exe-radio-option-0-2-0b35-truefalse" /> Verdadero</label> 
+										<label for="false0b35"><input onclick="verdaderoFalso3(2)"  type="radio" name="option0b35" id="false0b35" class="exe-radio-option exe-radio-option-1-2-0b35-truefalse" /> Falso</label>
+										</p>
+										</form>
+										<p id="retroVF3"></p>
+										</section>
+										</div>
+										</div>
+										</div>
+										</article>
+
+										<!--llenar vacions-->
+										<article class="iDevice_wrapper em_iDevice_question" id="id44">
+										<div class="iDevice emphasis1" >
+										<header class="iDevice_header iDevice_header_noIcon" style="text-align: center"><h1 class="iDeviceTitle" >&nbsp &nbsp &nbsp Rellenar vacios &nbsp &nbsp &nbsp</h1></header>
+										<div class="iDevice_inner" >
+										<section id="ta44_105" class="block instructions iDevice_content">
+										<p style="color: black">Completar los espacios con lo que considere.</p>
+										</section>
+										<section class="activity" id="activity-44_106">
+										<form name="cloze-form-44_106" action="#" class="activity-form cloze-activity-form">
+										<div id="cloze44_106">
+										<input type="hidden" name="clozeFlag44_106.strictMarking" id="clozeFlag44_106.strictMarking" value="false"/>
+
+										<input type="hidden" name="clozeFlag44_106.checkCaps" id="clozeFlag44_106.checkCaps" value="false"/>
+
+										<input type="hidden" name="clozeFlag44_106.instantMarking" id="clozeFlag44_106.instantMarking" value="false"/>
+										<p style="color: black">El ciclo WHILE depende del valor de   
+										<input  type="text" value="" id="llenar1" name="llenar1"/>
+	
+										</p>
+										<input  class="button" type="button" value="Comprobar "  style="display:block"  id="enviarResp1" onclick="comporvarRespoesta1()"/>
+										<input onclick="verRespuestaLenar1()" id="mostrarResp1" style="display:none" type="button" value="Mostrar las respuestas" />
+										<input type="button" id="limpiarResp1" style="display:none" value="Reiniciar" onclick="lipiarCuadro1()" />
+										<p id="retroLLenar1"></p>
+										</div>
+										</form>
+										</section>
+										</div>
+
+										<br>
+										<div class="iDevice_inner">
+										<section id="ta44_105" class="block instructions iDevice_content">
+										<p style="color: black">Completar los espacios con lo que considere.</p>
+										</section>
+										<section class="activity" id="activity-44_106">
+										<form name="cloze-form-44_106" action="#" class="activity-form cloze-activity-form">
+										<div id="cloze44_106">
+										<input type="hidden" name="clozeFlag44_106.strictMarking" id="clozeFlag44_106.strictMarking" value="false"/>
+
+										<input type="hidden" name="clozeFlag44_106.checkCaps" id="clozeFlag44_106.checkCaps" value="false"/>
+
+										<input type="hidden" name="clozeFlag44_106.instantMarking" id="clozeFlag44_106.instantMarking" value="false"/>
+										<p style="color: black">El ciclo FOR nos permiten 
+										<input  type="text" value="" id="llenar2" name="llenar2"/>
+										del paso entre cada "giro" o iteración del ciclo.
+										</p>
+										<input  class="button" type="button" value="Comprobar"  style="display:block"  id="enviarResp2" onclick="comporvarRespoesta2()"/>
+										<input onclick="verRespuestaLenar2()" id="mostrarResp2" style="display:none" type="button" value="Mostrar las respuestas" />
+										<input type="button" id="limpiarResp2" style="display:none" value="Reiniciar" onclick="lipiarCuadro2()" />
+										<p id="retroLLenar2"></p>
+										</div>
+										</form>
+										</section>
+										</div>
+										<br>
+
+										<div class="iDevice_inner">
+										<section id="ta44_105" class="block instructions iDevice_content">
+										<p style="color: black">Completar los espacios con lo que considere.</p>
+										</section>
+										<section class="activity" id="activity-44_106">
+										<form name="cloze-form-44_106" action="#" class="activity-form cloze-activity-form">
+										<div id="cloze44_106">
+										<input type="hidden" name="clozeFlag44_106.strictMarking" id="clozeFlag44_106.strictMarking" value="false"/>
+
+										<input type="hidden" name="clozeFlag44_106.checkCaps" id="clozeFlag44_106.checkCaps" value="false"/>
+
+										<input type="hidden" name="clozeFlag44_106.instantMarking" id="clozeFlag44_106.instantMarking" value="false"/>
+										<p style="color: black">El ciclo DO-WHILE nos permite ejecutar de manera repetitiva un bloque de instrucciones 
+										<input  type="text" value="" id="llenar3" name="llenar3"/>
+										 de forma inmediata una condición especifica
+										</p>
+										<br>
+										<input  class="button" type="button" value="Comprobar"  style="display:block"  id="enviarResp3" onclick="comporvarRespoesta3()"/>
+										<input onclick="verRespuestaLenar3()" id="mostrarResp3" style="display:none" type="button" value="Mostrar las respuestas" />
+										<input type="button" id="limpiarResp3" style="display:none" value="Reiniciar" onclick="lipiarCuadro3()" />
+										<p id="retroLLenar3"></p>
+										</div>
+										</form>
+										</section>
+										</div>
+										</div>
+										</article>
+
+										</section>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>	
+
+						
+	
+
+				
+				</div>							
+			</div>			
+		</div>
+		<div id="preload-01"></div>
+		<div id="preload-02"></div>
+		<div id="preload-03"></div>
+		<div id="preload-04"></div>
+
+		<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript" src="js/jquery.magnific-popup.min.js"></script>
+		<script type="text/javascript" src="js/jquery.backstretch.min.js"></script>
+		<script type="text/javascript" src="slick/slick.min.js"></script> <!-- Slick Carousel -->
+
+		<script>
+
+		var sidebarVisible = false;
+		var currentPageID = "#tm-section-1";
+
+		// Setup Carousel
+		function setupCarousel() {
+
+			// If current page isn't Carousel page, don't do anything.
+			if($('#tm-section-2').css('display') == "none") {
+			}
+			else {	// If current page is Carousel page, set up the Carousel.
+
+				var slider = $('.tm-img-slider');
+				var windowWidth = $(window).width();
+
+				if (slider.hasClass('slick-initialized')) {
+					slider.slick('destroy');
+				}
+
+				if(windowWidth < 640) {
+					slider.slick({
+	              		dots: true,
+	              		infinite: false,
+	              		slidesToShow: 1,
+	              		slidesToScroll: 1
+	              	});
+				}
+				else if(windowWidth < 992) {
+					slider.slick({
+	              		dots: true,
+	              		infinite: false,
+	              		slidesToShow: 2,
+	              		slidesToScroll: 1
+	              	});
+				}
+				else {
+					// Slick carousel
+	              	slider.slick({
+	              		dots: true,
+	              		infinite: false,
+	              		slidesToShow: 3,
+	              		slidesToScroll: 2
+	              	});
+				}
+
+				// Init Magnific Popup
+				$('.tm-img-slider').magnificPopup({
+				  delegate: 'a', // child items selector, by clicking on it popup will open
+				  type: 'image',
+				  gallery: {enabled:true}
+				  // other options
+				});
+      		}
+  		}
+
+  		// Setup Nav
+  		function setupNav() {
+  			// Add Event Listener to each Nav item
+	     	$(".tm-main-nav a").click(function(e){
+	     		e.preventDefault();
+		    	
+		    	var currentNavItem = $(this);
+		    	changePage(currentNavItem);
+		    	
+		    	setupCarousel();
+		    	setupFooter();
+
+		    	// Hide the nav on mobile
+		    	$("#tmSideBar").removeClass("show");
+		    });	    
+  		}
+
+  		function changePage(currentNavItem) {
+  			// Update Nav items
+  			$(".tm-main-nav a").removeClass("active");
+     		currentNavItem.addClass("active");
+
+	    	$(currentPageID).hide();
+
+	    	// Show current page
+	    	currentPageID = currentNavItem.data("page");
+	    	$(currentPageID).fadeIn(1000);
+
+	    	// Change background image
+	    	var bgImg = currentNavItem.data("bgImg");
+	    	$.backstretch("img/" + bgImg);		    	
+  		}
+
+  		// Setup Nav Toggle Button
+  		function setupNavToggle() {
+
+			$("#tmMainNavToggle").on("click", function(){
+				$(".sidebar").toggleClass("show");
+			});
+  		}
+
+  		// If there is enough room, stick the footer at the bottom of page content.
+  		// If not, place it after the page content
+  		function setupFooter() {
+  			
+  			var padding = 100;
+  			var footerPadding = 40;
+  			var mainContent = $("section"+currentPageID);
+  			var mainContentHeight = mainContent.outerHeight(true);
+  			var footer = $(".footer-link");
+  			var footerHeight = footer.outerHeight(true);
+  			var totalPageHeight = mainContentHeight + footerHeight + footerPadding + padding;
+  			var windowHeight = $(window).height();		
+
+  			if(totalPageHeight > windowHeight){
+  				$(".tm-content").css("margin-bottom", footerHeight + footerPadding + "px");
+  				footer.css("bottom", footerHeight + "px");  			
+  			}
+  			else {
+  				$(".tm-content").css("margin-bottom", "0");
+  				footer.css("bottom", "20px");  				
+  			}  			
+  		}
+
+  		// Everything is loaded including images.
+      	$(window).on("load", function(){
+
+      		// Render the page on modern browser only.
+      		if(renderPage) {
+				// Remove loader
+		      	$('body').addClass('loaded');
+
+		      	// Page transition
+		      	var allPages = $(".tm-section");
+
+		      	var linkToAnotherPage = $("a.tm-btn[data-nav-link]");
+			    
+			    if(linkToAnotherPage != null) {
+			    	
+			    	linkToAnotherPage.on("click", function(){
+			    		var navItemToHighlight = linkToAnotherPage.data("navLink");
+			    		$("a" + navItemToHighlight).click();
+			    	});
+			    }
+		      	
+		      	// Hide all pages
+		      	allPages.hide();
+
+		      	$("#tm-section-1").fadeIn();
+
+		     	var bgImg = $("#tmNavLink1").data("bgImg");
+		     	
+		     	$.backstretch("img/" + bgImg, {fade: 500});
+
+			    setupCarousel();
+			    setupNav();
+			    setupNavToggle();
+			    setupFooter();
+
+			    $(window).resize(function() {
+			    	setupCarousel();
+			    	setupFooter();
+			    });
+      		}	      	
+		});
+
+		</script>
+	</body>
+</html>

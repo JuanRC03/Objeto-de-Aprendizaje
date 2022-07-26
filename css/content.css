@@ -1,0 +1,33 @@
+/* vietnamese */
+
+body{font:1.1em/1.6 "Quicksand","Open Sans",​Arial,Helvetica,​sans-serif;padding:15px;margin:0;text-align:left;color:#333;background:#FFF}
+p{margin:1em 0}
+
+
+#main h4{font-size:1.2em}
+#main h5{font-size:1.1em}
+.iDevice{margin:1em 0 2em 0}
+
+/* iDevice icons */
+.iDevice_header{background:#F5F5F5 url(icon_think.png) no-repeat 20px 15px;padding:20px 0 30px 105px;position:relative;border-top-left-radius:2px;border-top-right-radius:2px}
+.hidden-idevice .iDevice_header{border-radius:2px}
+.iDevice_header.iDevice_header_noIcon{padding:5px 20px}
+.hidden-idevice .iDevice_header.iDevice_header_noIcon{padding-bottom:20px}
+
+#main .iDeviceTitle{font-size:1.4em;display:inline;font-weight:normal;vertical-align:top;top:.25em;color:#000;line-height:2em;padding-right:55px;letter-spacing:1px}
+.iDevice_content{overflow:auto}
+/* iDevice content */
+.iDevice_inner{padding:10px 20px;border:1px solid #F5F5F5;background:#F5F5F5;border-radius:10px}
+
+
+
+.toggle-idevice{text-align:right;display:block}
+.iDevice_header .toggle-idevice{margin:0;position:absolute;right:15px;top:15px}
+.toggle-idevice a{display:inline-block;width:23px;height:23px;background:url(_cedec_icons.png) no-repeat 0 -23px;opacity:.6;filter:alpha(opacity=60)}
+.toggle-idevice a:hover,.toggle-idevice a:focus{opacity:1;filter:alpha(opacity=100)}
+.toggle-em1 a{background-position:-23px -23px; border-radius:10px; color: #fff}
+.toggle-idevice .show-idevice{background-position:0 0}
+.toggle-em1 .show-idevice{background-position:-23px 0}
+.toggle-idevice span{position:absolute;overflow:hidden;clip:rect(0,0,0,0);height:0}
+
+
